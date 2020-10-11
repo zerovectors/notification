@@ -14,10 +14,12 @@
 
 	Line.Name = "Line"
 	Line.Parent = Notification
-	Line.BackgroundColor3 = Color3.fromRGB(221, 3, 255)
 	Line.BorderSizePixel = 0
 	Line.Position = UDim2.new(0, 0, 0.807692289, 0)
 	Line.Size = UDim2.new(0, 1917, 0, 5)
+	game:GetService("RunService").RenderStepped:Connect(function()
+		Line.BackgroundColor3 = getrenv().ui_settings.main_colour
+	end)
 
 	Message.Name = "Message"
 	Message.Parent = Notification
